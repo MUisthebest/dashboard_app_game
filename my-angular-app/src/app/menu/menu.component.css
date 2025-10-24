@@ -1,0 +1,232 @@
+.menu {
+    display: flex;
+    padding: 0 30px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: calc(100vw - 60px);
+    gap: 35px;
+    height: 100vh;
+}
+
+.menu h2 {
+    display: flex;
+    align-items: center;
+    font-size: calc(5vw);
+    width: 20%;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+button {
+    width: 33%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(2vw + 1px);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* nền toàn trang */
+    background: linear-gradient(135deg, #6dd5ed, #c3cfe2);
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    color: #3F3B6C;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+button img {
+    width: calc(5vw + 50px);
+    height: auto;
+    display: flex;
+    justify-self: center;
+}
+
+button .shiny-text {
+    display: flex;
+    justify-self: flex-end;
+}
+
+/* Animation cho kính pha lê - lấp lánh */
+.glass {
+  animation: sparkle 2s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px #aeefff);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #ffffff);
+    transform: scale(1.05);
+  }
+}
+
+/* Animation cho người tuyết - rung nhẹ như gió lạnh */
+.snowman {
+  animation: shiver 0.4s infinite ease-in-out;
+}
+
+@keyframes shiver {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+}
+
+/* Animation cho nút chơi - nhấp nháy như đèn neon */
+.game {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px #ff80c0);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #ffb6f9);
+    transform: scale(1.08);
+  }
+}
+
+button .shiny-text {
+  font-size: calc(2vw + 8px);
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(120deg, #000 0%, #222 40%, #444 60%, #666 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shineText 2s linear infinite;
+}
+
+@keyframes shineText {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.game-guide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 84vh;
+  margin-top: 8vh;
+  background: linear-gradient(135deg, #6dd5ed, #c3cfe2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  justify-self: center;
+  width: 35%;
+  border-radius: 12px;
+  justify-content: center;
+}
+
+.game-guide h2 {
+  font-size: calc(2vw + 10px);
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(120deg, #000 0%, #222 40%, #444 60%, #666 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  width: 100%;
+  animation: shineText 3s linear infinite;
+}
+
+.game-guide img {
+  width: 20%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.game-guide p {
+  font-size: calc(1vw + 7px);
+  line-height: 1.6;
+  background: linear-gradient(90deg, #000, #555, #777);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shineText 3s linear infinite;
+}
+
+@keyframes shineText {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column-reverse;
+        align-items: center;
+        align-content: center;
+        width: calc(100vw);
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .menu h2 {
+        width: 100%;
+        font-size: calc(8vw);
+        text-align: center;
+    }
+
+    .menu-options {
+        flex-direction: column-reverse;
+        width: 100%;
+        height: auto;
+    }
+
+    button {
+        width: 80%;
+        height: 20vh;
+    }
+
+    .game-guide {
+        width: 80%;
+        height: auto;
+        margin-top: 0;
+        padding: 20px 0;
+    }
+
+    .game-guide img {
+        display: none;
+    }
+}

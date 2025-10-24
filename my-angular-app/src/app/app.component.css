@@ -1,0 +1,73 @@
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    gap: 0;
+    overflow: hidden;
+    /* fallback background color if image fails */
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* blurred background layer */
+.app-container::before {
+    content: '';
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background-image: url('https://cdna.artstation.com/p/assets/images/images/031/893/686/original/camille-unknown-snow-story-01.gif?1604917299');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(1px) brightness(1) saturate(1);
+    transform: scale(1.04); /* avoid visible edges after blur */
+    will-change: filter, transform;
+    z-index: 0;
+}
+
+/* optional dim overlay to increase content contrast */
+.app-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(206, 206, 206, 0.25);
+    z-index: 0;
+}
+
+/* make sure all children render above the background layers */
+.app-container > * {
+    position: relative;
+    z-index: 1;
+}
+
+.app-container h1 {
+    color: #ffffff;
+    text-align: center;
+    height: 10vh;
+}
+
+app-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+app-game-frame {
+    height: 80vh;
+    align-self: center;
+    display: flex;}
+
+@media screen and (max-width: 768px) {
+    app-menu {
+        height: auto;
+    }
+    .app-container {
+        overflow: auto;
+        height: auto;
+    }
+    app-game-frame {
+        height: 60vh;
+        width: 100vw;
+    }
+}

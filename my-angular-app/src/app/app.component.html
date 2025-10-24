@@ -1,0 +1,9 @@
+<div class="app-container">
+  <app-menu *ngIf="currentScene === 'menu'" (navigate)="goTo($event)"></app-menu>
+
+  <app-game-frame
+    *ngIf="currentScene !== 'menu'"
+    [title]="currentScene"
+    (back)="backToMenu()">
+  </app-game-frame>
+</div>

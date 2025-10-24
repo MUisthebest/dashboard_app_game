@@ -1,0 +1,31 @@
+    .game-wrapper {
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      align-self: center;
+      align-items: center;
+      height: 95vh;
+      width: 80vw;
+      background: #fff;
+      scale: calc(0.7);
+
+    }
+
+    .game-wrapper iframe {
+      border: 2px solid #fff;
+      width: 100vw;
+      height: 90vh;
+    }
+
+    @media screen and (max-width: 768px) {
+        
+      .game-wrapper {
+        width: 100vw;
+        height: 70vh;
+        scale: 1;
+      }
+      .game-wrapper iframe {
+        width: 100vw;
+        height: 50vh;
+      }
+    }
