@@ -1,2 +1,0 @@
-export default `html,body{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;overflow:hidden}@media screen and (max-width: 768px){html,body{height:auto;width:100%;overflow:auto}}
-`;
