@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/my-angular-app/server/**/*.mjs",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/my-angular-app/browser/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dist/my-angular-app/server/server.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/my-angular-app/server/server.mjs"
+    }
+  ]
+}
