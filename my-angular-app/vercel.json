@@ -1,17 +1,5 @@
 {
-  "version": 2,
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/my-angular-app/assets/$1"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
-      "dest": "/my-angular-app/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/my-angular-app/index.html"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
