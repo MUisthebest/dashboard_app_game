@@ -1,11 +1,33 @@
 .menu {
     display: flex;
+    position: relative;
     padding: 0 30px;
     flex-direction: row-reverse;
     justify-content: flex-end;
     width: calc(100vw - 60px);
     gap: 35px;
-    height: 100vh;
+    height: 100%;
+    backdrop-filter: blur(10px);
+background: rgba(255, 255, 255, 0.2);
+}
+
+.back-button {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  z-index: 30;
+}
+
+.back-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 .menu h2 {
@@ -19,29 +41,30 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 20px;
-    height: 100vh;
+    height: 20vh;
     justify-content: center;
     align-items: center;
-    width: 60%;
+    width: 100vw;
 }
 
 button {
-    width: 33%;
-    height: 75vh;
+    width: 50%;
+    height: 10vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: calc(2vw + 1px);
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.6);
     /* nền toàn trang */
-    background: linear-gradient(135deg, #6dd5ed, #c3cfe2);
     align-items: center;
     justify-content: center;
     border-radius: 12px;
+    gap: calc(1vw + 10px);
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px);
-    color: #3F3B6C;
+    backdrop-filter: blur(5px);
     transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    color: #3F3B6C;
 }
 
 button:hover {
@@ -49,7 +72,7 @@ button:hover {
   transform: scale(1.05);
 }
 button img {
-    width: calc(5vw + 50px);
+    width: calc(2vh + 50px);
     height: auto;
     display: flex;
     justify-self: center;

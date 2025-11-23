@@ -1,11 +1,11 @@
 
 .app-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto;
     height: 100vh;
     gap: 0;
     overflow: hidden;
+    position: relative;
     /* fallback background color if image fails */
     background-color: rgba(255, 255, 255, 0);
 }
@@ -15,7 +15,7 @@
     content: '';
     position: absolute;
     inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    background-image: url('https://cdna.artstation.com/p/assets/images/images/031/893/686/original/camille-unknown-snow-story-01.gif?1604917299');
+    background-image: url('https://cdn.dribbble.com/userupload/20204511/file/original-5d53624587ff30f0b2ab9af7c1a50e70.jpg?resize=752x&vertical=center');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,16 +47,63 @@
 }
 
 app-menu {
-    flex: 1;
+    grid-row: 2;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
 app-game-frame {
+    grid-row: 1;
+    grid-column: 1;
     height: 80vh;
     align-self: center;
-    display: flex;}
+    display: flex;
+}
+
+/* overlay style for the game when opened from the menu */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.game-overlay .game-wrapper {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* microfrontend iframe overlay (leaderboard/demo 2) */
+.mf-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 80vh;
+    background: rgba(0,0,0,0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 55;
+}
+
+.mf-overlay iframe {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    background: #fff;
+}
 
 @media screen and (max-width: 768px) {
     app-menu {

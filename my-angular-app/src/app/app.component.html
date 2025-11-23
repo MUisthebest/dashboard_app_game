@@ -1,9 +1,18 @@
 <div class="app-container">
-  <app-menu *ngIf="currentScene === 'menu'" (navigate)="goTo($event)"></app-menu>
-
   <app-game-frame
-    *ngIf="currentScene !== 'menu'"
-    [title]="currentScene"
-    (back)="backToMenu()">
-  </app-game-frame>
+  *ngIf="currentScene === 'play'"
+  class="game-overlay"
+  [title]="currentScene"
+  (back)="backToMenu()">
+</app-game-frame>
+  <div *ngIf="currentScene === 'leaderboard'" class="mf-overlay">
+    <iframe
+      src="https://login-microfrontend-4vnj.vercel.app/"
+      frameborder="0"
+      allow="fullscreen"
+      referrerpolicy="no-referrer"
+      sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+    ></iframe>
+  </div>
+  <app-menu (navigate)="goTo($event)"></app-menu>
 </div>
